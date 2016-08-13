@@ -138,7 +138,7 @@ function BinarySearchTree(){
             inOrderTraverseNode(node.right,callback);
         }
     }
-
+    //先序遍历
     this.prevOrderTraverse=function(callback){
       preOrderTraverseNode(root,callback);
     };
@@ -149,6 +149,7 @@ function BinarySearchTree(){
             inOrderTraverseNode(node.right,callback);
         }
     };
+    //后序遍历
     this.postOrderTraverse= function (callback) {
       postOrderTraverseNode(root,callback);
     };
