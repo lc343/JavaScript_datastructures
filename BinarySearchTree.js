@@ -127,5 +127,38 @@ function BinarySearchTree(){
             return null;
         }
     }
+    //ÖÐÐò±éÀú
+    this.inOrderTraverse=function(callback){
+        inOrderTraverseNode(root,callback);
+    };
+    var inOrderTraverseNode=function(node,callback){
+        if(node!==null){
+            inOrderTraverseNode(node.left,callback);
+            callback(node.key);
+            inOrderTraverseNode(node.right,callback);
+        }
+    }
+
+    this.prevOrderTraverse=function(callback){
+      preOrderTraverseNode(root,callback);
+    };
+    var preOrderTraverseNode=function(node,callback){
+        if(node!=null){
+            callback(node.key);
+            inOrderTraverseNode(node.left,callback);
+            inOrderTraverseNode(node.right,callback);
+        }
+    };
+    this.postOrderTraverse= function (callback) {
+      postOrderTraverseNode(root,callback);
+    };
+    var postOrderTraverseNode=function(node,callback){
+       if(node!=null){
+           postOrderTraverseNode(node.left,callback);
+           postOrderTraverseNode(node.right,callback);
+           callback(node.key);
+       }
+    };
+
 }
 
